@@ -87,16 +87,12 @@ namespace rov_types {
         std::size_t m_counter;
         std::vector<std::uint8_t> m_data;
 
-
-
-
         template<typename T>
         inline void read(T &data) {
             std::memcpy((void *) (&data), (void *) (m_data.data() + m_counter), sizeof(T));
             if (m_ordering != m_system_type) {
                 data = swap_endian<T>(data);
             }
-            std::cout << sizeof(T) << std::endl;
             m_counter += sizeof(T);
         }
 
@@ -112,7 +108,7 @@ namespace rov_types {
                 T u;
                 unsigned char u8[sizeof(T)];
             } source;
-            std::cout << sizeof(T) << std::endl;
+
             source.u = loc;
             for (auto &b : source.u8) {
                 m_data.emplace_back(b);
