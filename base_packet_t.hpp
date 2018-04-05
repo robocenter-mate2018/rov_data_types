@@ -49,9 +49,9 @@ namespace rov_types {
 
             return success;
         }
-
+        static meta_traits<packet_id_, payload_size_, packet_size_> meta;
     protected:
-        meta_traits<packet_id_, payload_size_, packet_size_> meta;
+
         virtual void data_serialize(binary_stream &bs) = 0;
         virtual void data_deserialize(binary_stream &bs) = 0;
     };
