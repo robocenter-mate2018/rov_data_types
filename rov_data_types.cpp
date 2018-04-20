@@ -238,3 +238,15 @@ void rov_types::rov_mini_control::data_deserialize(rov_types::binary_stream &bs)
     bs >> acoustics;
     bs >> manipulator;
 }
+
+void rov_types::rov_debug::data_serialize(rov_types::binary_stream &bs) {
+    for (auto &b : thruster_power) {
+        bs << b;
+    }
+}
+
+void rov_types::rov_debug::data_deserialize(rov_types::binary_stream &bs) {
+    for (auto &b : thruster_power) {
+        bs >> b;
+    }
+}

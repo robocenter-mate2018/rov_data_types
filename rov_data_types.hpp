@@ -61,6 +61,15 @@ namespace rov_types {
         void data_deserialize(binary_stream &bs) override final;
     };
 
+    struct rov_debug : public base_packet_t<0x4E, 9, 11> {
+        int8_t thruster_power[8] = {0};
+
+    private:
+        void data_serialize(binary_stream &bs) override final;
+
+        void data_deserialize(binary_stream &bs) override final;
+    };
+
 
     struct rov_hardware_control : public base_packet_t<0x1A, 19, 21> {
         int8_t horizontal_power[4] = { 0 }; //-100, 100 x 4
