@@ -87,7 +87,7 @@ namespace rov_types {
     };
 
 
-    struct rov_pd : public base_packet_t<0x4E, 41, 43> {
+    struct rov_pd : public base_packet_t<0x5E, 41, 43> {
         float yaw_p = -1;
         float yaw_d = 1;
 
