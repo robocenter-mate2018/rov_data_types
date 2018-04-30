@@ -74,7 +74,7 @@ namespace rov_types {
         void data_deserialize(binary_stream &bs) override final;
     };
 
-    struct rov_enable_pd : public base_packet_t<0x4E, 5, 7> {
+    struct rov_enable_pd : public base_packet_t<0x5E, 5, 7> {
         int8_t yaw_pd = -1;   // -1 - default, 0 - disable, 1 - enable
         int8_t depth_pd = -1; // -1 - default, 0 - disable, 1 - enable
         int8_t roll_pd = -1;  // -1 - default, 0 - disable, 1 - enable
@@ -87,7 +87,7 @@ namespace rov_types {
     };
 
 
-    struct rov_pd : public base_packet_t<0x5E, 41, 43> {
+    struct rov_pd : public base_packet_t<0x6E, 41, 43> {
         float yaw_p = -1;
         float yaw_d = 1;
 
